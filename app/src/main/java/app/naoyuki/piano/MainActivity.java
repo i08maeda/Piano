@@ -1,5 +1,6 @@
 package app.naoyuki.piano;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,7 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class PianoActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,9 @@ public class PianoActivity extends AppCompatActivity {
         piano_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(PianoActivity.this, "Click", Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(MainActivity.this, MusicPracticeActivity.class);
+                startActivity(intent);
+                //Toast.makeText(MainActivity.this, "Click", Toast.LENGTH_LONG).show();
             }
         });
 
