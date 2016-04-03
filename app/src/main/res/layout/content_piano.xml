@@ -12,8 +12,40 @@
     tools:context="app.naoyuki.piano.PianoActivity"
     tools:showIn="@layout/activity_piano">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="メニュー"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/go_to_piano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ピアノ画面へ"/>
+            <Button
+                android:id="@+id/go_to_music_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="音楽記号へ"/>
+            <Button
+                android:id="@+id/go_to_music_practice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="曲練習へ"/>
+            <Button
+                android:id="@+id/go_to_rhythm_practice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="リズム練習へ"/>
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
