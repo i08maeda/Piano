@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         piano_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this, MusicPracticeActivity.class);
+                Intent intent=new Intent(MainActivity.this, PianoActivity.class);
                 startActivity(intent);
                 //Toast.makeText(MainActivity.this, "Click", Toast.LENGTH_LONG).show();
             }

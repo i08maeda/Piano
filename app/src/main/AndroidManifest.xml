@@ -20,8 +20,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MusicPracticeActivity"
-            android:label="@string/app_name">
+            android:name=".PianoActivity"
+            android:screenOrientation="landscape">
         </activity>
     </application>
 

@@ -1,20 +1,17 @@
 package app.naoyuki.piano;
 
 import android.app.Activity;
-import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 /**
  * Created by Naoyuki on 2016/04/03.
  */
-public class MusicPracticeActivity extends Activity implements View.OnTouchListener {
+public class PianoActivity extends Activity implements View.OnTouchListener {
     final int MAX_SOUND_NUM=5;  //同時になる最大音数
     SoundPool sound_bool;
     int[][] sound_ids;
@@ -22,7 +19,7 @@ public class MusicPracticeActivity extends Activity implements View.OnTouchListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.music_practice);
+        setContentView(R.layout.piano);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         //音源の用意
