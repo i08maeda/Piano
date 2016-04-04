@@ -23,9 +23,10 @@ public class PianoActivity extends Activity implements View.OnTouchListener {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         //音源の用意
-        stop_id=new int[15];
+        stop_id=new int[25];
         sound_bool=new SoundPool(MAX_SOUND_NUM, AudioManager.STREAM_MUSIC, 0);
-        sound_ids=new int[1][15];
+        sound_ids=new int[1][25];
+        //白鍵の音源
         sound_ids[0][0]=sound_bool.load(this, R.raw.p_c, 1);
         sound_ids[0][1]=sound_bool.load(this, R.raw.p_d, 1);
         sound_ids[0][2]=sound_bool.load(this, R.raw.p_e, 1);
@@ -41,8 +42,20 @@ public class PianoActivity extends Activity implements View.OnTouchListener {
         sound_ids[0][12]=sound_bool.load(this, R.raw.p_high_a, 1);
         sound_ids[0][13]=sound_bool.load(this, R.raw.p_high_h, 1);
         sound_ids[0][14]=sound_bool.load(this, R.raw.p_d_high_c, 1);
+        //黒鍵の音源
+        sound_ids[0][15]=sound_bool.load(this, R.raw.p_cis, 1);
+        sound_ids[0][16]=sound_bool.load(this, R.raw.p_es, 1);
+        sound_ids[0][17]=sound_bool.load(this, R.raw.p_fis, 1);
+        sound_ids[0][18]=sound_bool.load(this, R.raw.p_as, 1);
+        sound_ids[0][19]=sound_bool.load(this, R.raw.p_b, 1);
+        sound_ids[0][20]=sound_bool.load(this, R.raw.p_high_cis, 1);
+        sound_ids[0][21]=sound_bool.load(this, R.raw.p_high_es, 1);
+        sound_ids[0][22]=sound_bool.load(this, R.raw.p_high_fis, 1);
+        sound_ids[0][23]=sound_bool.load(this, R.raw.p_high_as, 1);
+        sound_ids[0][24]=sound_bool.load(this, R.raw.p_high_b, 1);
 
         //各鍵盤がクリックされたときの動作
+        //白鍵
         findViewById(R.id.c).setOnTouchListener(this);
         findViewById(R.id.d).setOnTouchListener(this);
         findViewById(R.id.e).setOnTouchListener(this);
@@ -58,12 +71,24 @@ public class PianoActivity extends Activity implements View.OnTouchListener {
         findViewById(R.id.high_a).setOnTouchListener(this);
         findViewById(R.id.high_h).setOnTouchListener(this);
         findViewById(R.id.high_d_c).setOnTouchListener(this);
+        //黒鍵
+        findViewById(R.id.cis).setOnTouchListener(this);
+        findViewById(R.id.dis).setOnTouchListener(this);
+        findViewById(R.id.fis).setOnTouchListener(this);
+        findViewById(R.id.gis).setOnTouchListener(this);
+        findViewById(R.id.ais).setOnTouchListener(this);
+        findViewById(R.id.high_cis).setOnTouchListener(this);
+        findViewById(R.id.high_dis).setOnTouchListener(this);
+        findViewById(R.id.high_fis).setOnTouchListener(this);
+        findViewById(R.id.high_gis).setOnTouchListener(this);
+        findViewById(R.id.high_ais).setOnTouchListener(this);
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if(v!=null){
             switch (v.getId()){
+                //白鍵が押されたとき
                 case R.id.c:
                     if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
                         stop_id[0]=sound_bool.play(sound_ids[0][0], 1.0F, 1.0F, 1, 0, 1.0F);
@@ -167,6 +192,77 @@ public class PianoActivity extends Activity implements View.OnTouchListener {
                         stop_id[14]=sound_bool.play(sound_ids[0][14], 1.0F, 1.0F, 1, 0, 1.0F);
                     }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
                         sound_bool.stop(stop_id[14]);
+                    }
+                    break;
+                //黒鍵が押されたとき
+                case R.id.cis:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[15]=sound_bool.play(sound_ids[0][15], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[15]);
+                    }
+                    break;
+                case R.id.dis:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[16]=sound_bool.play(sound_ids[0][16], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[16]);
+                    }
+                    break;
+                case R.id.fis:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[17]=sound_bool.play(sound_ids[0][17], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[17]);
+                    }
+                    break;
+                case R.id.gis:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[18]=sound_bool.play(sound_ids[0][18], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[18]);
+                    }
+                    break;
+                case R.id.ais:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[19]=sound_bool.play(sound_ids[0][19], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[19]);
+                    }
+                    break;
+                case R.id.high_cis:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[20]=sound_bool.play(sound_ids[0][20], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[20]);
+                    }
+                    break;
+                case R.id.high_dis:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[21]=sound_bool.play(sound_ids[0][21], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[21]);
+                    }
+                    break;
+                case R.id.high_fis:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[22]=sound_bool.play(sound_ids[0][22], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[22]);
+                    }
+                    break;
+                case R.id.high_gis:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[23]=sound_bool.play(sound_ids[0][23], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[23]);
+                    }
+                    break;
+                case R.id.high_ais:
+                    if(event.getAction()==MotionEvent.ACTION_DOWN){     //鍵盤が押下されているとき
+                        stop_id[24]=sound_bool.play(sound_ids[0][24], 1.0F, 1.0F, 1, 0, 1.0F);
+                    }else if(event.getAction()==MotionEvent.ACTION_UP){ //鍵盤から指が離れたとき
+                        sound_bool.stop(stop_id[24]);
                     }
                     break;
                 default:

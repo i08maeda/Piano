@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         music_practice_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(MainActivity.this, MusicPracticeActivity.class);
+                startActivity(intent);
             }
         });
 

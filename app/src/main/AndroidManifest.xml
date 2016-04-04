@@ -23,6 +23,11 @@
             android:name=".PianoActivity"
             android:screenOrientation="landscape">
         </activity>
+        <activity
+            android:name=".MusicPracticeActivity"
+            android:screenOrientation="landscape">
+        </activity>
+
     </application>
 
 </manifest>
