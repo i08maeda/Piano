@@ -24,12 +24,21 @@ public class MusicPracticeActivity extends Activity implements View.OnClickListe
         score1.setImageResource(R.drawable.kaerunouta_1);
         score2=(ImageView)findViewById(R.id.score2);
         score2.setImageResource(R.drawable.kaerunouta_2);
+        findViewById(R.id.frog).setOnClickListener(this);
+        findViewById(R.id.lullaby).setOnClickListener(this);
 
         //メトロノーム
         metronome=(ImageView)findViewById(R.id.metronome);
 
-        findViewById(R.id.frog).setOnClickListener(this);
-        findViewById(R.id.lullaby).setOnClickListener(this);
+        //練習スタート
+        Button start_btn=(Button)findViewById(R.id.start);
+        start_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
     @Override
@@ -49,5 +58,9 @@ public class MusicPracticeActivity extends Activity implements View.OnClickListe
                     break;
             }
         }
+    }
+
+    protected void startMetronome(){
+
     }
 }
